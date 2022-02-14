@@ -1,0 +1,427 @@
+:root{
+    --ripple: #30e2c4cc;
+    --background: #979797;
+}   
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 
+.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--background);
+}
+    .container span{
+        position:absolute;
+        box-shadow: 1px 1px 10px var(--ripple),
+                    inset 0 0 4px var(--ripple);
+        animation:  ripple 1s linear;
+        border-radius: 50%;
+        transform:  translate(-50%, -50%);
+    }
+    
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    90% {
+        height: 100px;
+        width: 100px;
+    }
+    100% {
+        opacity: 0;
+    }
+} */
+
+
+textarea {
+    resize: none;
+    padding: 5px;
+    align-items: center;
+    width: 250px;
+    height: 100px;
+    border-radius: 1rem;
+    resize: none;
+    padding: 10px;
+}
+
+.contenido {
+    width: 100%;
+    height: calc(100% - 55px);
+    margin: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.mapa {
+    transition: all .5s;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    border: none;
+}
+
+.buscador {
+    display: block;
+    float: right;
+    text-align: center;
+    margin: 25px;
+    z-index: 2;
+    right: 0;
+    position: fixed;
+}
+    .buscador input {
+        margin: 0;
+        padding: 0;
+        width: 350px;
+        height: 35px;
+        background: #FFFFFF;
+        background-image: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png");
+        background-repeat: no-repeat;
+        background-position: 6px center;
+        background-size: 20px;
+        border: none;
+        border-radius: 1rem;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .buscador input:focus {
+        box-shadow: inset 0 0 0 2px #00a592;
+    }
+
+.botonReportar {
+    visibility: hidden;
+    position: absolute;
+    margin: 10px;
+    height: auto;
+    width: 100px;
+    padding: 5px;
+    background: #04CAB3;
+    cursor: pointer;
+    border: none;
+    border-radius: .5rem;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all .5s ease;
+}
+    .botonReportar:hover {
+        background: #00a592;
+        color: #FFFFFF;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+    }
+    .showBotonReportar {
+        visibility: visible;
+        position: static;
+    }
+
+
+
+
+
+.reportar {
+    transition: all .5s;
+    background-color: #FAFAFA;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    height: max-content;
+    width: max-content;
+    z-index: 3;
+    border-radius: 1rem;
+    margin: 200px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+}
+    .reportar .opciones {
+        list-style: none;
+    }
+    .reportar .barra1 {
+        border-radius: 1rem 1rem 0rem 0rem;
+        color: #FFFFFF;
+        background-color: #3A4049;
+        padding: 10px;
+    }
+        .reportar .barra1 h2 {
+            margin: 0;
+            padding: 0;
+        }
+    .reportar .barra2 {
+        border-radius: 1rem 1rem 0rem 0rem;
+        color: #FFFFFF;
+        background-color: #6cb7ce;
+        padding: 10px;
+    }
+    .reportar .barra3 {
+        border-radius: 1rem 1rem 0rem 0rem;
+        color: #FFFFFF;
+        background-color: #864109;
+        padding: 10px;
+    }
+
+
+
+
+    .reportar .opciones {      
+        margin: 0;
+        padding: 0;
+    }
+    .reportar .opciones li {      
+        margin: 0;
+        padding: 0;  
+        padding: 10px 40px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .reportar hr {      
+        margin: 0;
+        padding: 0;
+    }
+    .reportar .incendio {
+        color: #3A4049;
+    }
+        .reportar .incendio:hover {
+            color: #fd8037;
+        }
+    .reportar .agua {
+        color: #3A4049;
+    }
+        .reportar .agua:hover {
+            color: #6cb7ce;
+        }
+    .reportar .obstruccion {
+        color: #3A4049;
+    }
+        .reportar .obstruccion:hover {
+            color: #864109;
+        }
+    .reportar .alumbrado {
+        color: #3A4049;
+    }
+        .reportar .alumbrado:hover {
+            color: #ccc547;
+        }
+
+
+
+
+        
+.tipoProblema {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 3;
+}
+
+.activeTipoProblema {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all .5s;
+}
+
+.tipoAgua {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 4;
+}
+
+.activeTipoAgua {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all .5s;
+}
+
+.tipoObstruccion {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 4;
+}
+
+.activeTipoObstruccion {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all .5s;
+}
+
+.formReporte {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 4;
+}
+
+.activeFormReporte {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all .5s;
+}
+
+
+
+
+
+.formReporteForm {
+    all: unset;
+}
+    .formReporteForm h3 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .formReporteForm input {
+        align-self:center;
+        width: auto;
+        height: auto;
+        padding: 0%;
+        margin: 0%;
+        
+    }
+    .formReporteForm label {
+        width: auto;
+        height: auto;
+        padding: 0%;
+        margin: 0%;
+    }
+    .formReporteForm .checkbox {
+        width: 20px;
+        height: 20px;
+        padding: 0%;
+        margin: 0 5px 10px 20px;
+    }
+    .formReporteForm .checkboxLabel {
+        width: auto;
+        height: auto;
+        font-size: 18px;
+        padding: 0%;
+        margin-right: 20px;
+    }
+    .formReporteForm .enviar {
+        margin: 10px auto 15px auto;
+        width: 60%;
+        height: 40px;
+        padding: 0%;
+        text-align: center;
+        border: none;
+        background: #04CAB3;
+        cursor: pointer;
+        border-radius: .5rem;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .formReporteForm .enviar:hover {
+        background: #00a592;
+        color: #FFFFFF;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+    }
+    .container-input {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+
+    /* margin: 0px 0px 10px 10%;
+    padding: 0px;
+    align-self: stretch;
+    color: #000000;
+}
+form input {
+    width: 70%;
+    height: 30px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: .5rem;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    padding-left: 5%; */
+
+
+
+.cerrar {
+    margin: 5px;
+    cursor: pointer;
+}
+    .cerrar:hover {
+        font-weight: bold;
+    }
+
+.desactivarMapa {
+    opacity: .5;
+    pointer-events: none;
+    transition: all .5s;
+}
+
+
+
+.error {
+    margin: 5px 0 0 0;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+    .buscador {
+        margin: 0;
+        float:unset;
+        position: absolute;
+        width: 100%;
+        align-items: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        z-index: 2;
+        right: 0;
+        /* position: fixed; */
+    }
+        .buscador input {
+            /* margin: 0; */
+            margin: 10px 8px 0px 8px;
+            padding: 0;
+            width: 98%;
+            height: 35px;
+            background: #FFFFFF;
+            background-image: url("https://img.icons8.com/ios-glyphs/30/000000/search--v1.png");
+            background-repeat: no-repeat;
+            background-position: 6px center;
+            background-size: 20px;
+            border: none;
+            border-radius: 1rem;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+            outline: none;
+            cursor: pointer;
+        }
+    
+        .buscador input:focus {
+            box-shadow: inset 0 0 0 2px #00a592;
+        }
+}

@@ -1,0 +1,89 @@
+
+    <app-barra-navegacion></app-barra-navegacion>
+<div class="container">
+    
+    <div class="buscador">
+        <input type="text" name="busqueda" id="buscador" placeholder="No sirve todavía">
+    </div>
+    
+    <div class="contenido">
+        <div class="mapa" id="mapa" [ngClass]="{'desactivarMapa': toggleDesactivarMapa}"></div>
+    
+        <div class="reportar tipoProblema" [ngClass]="{'activeTipoProblema': toggleTipoProblema}">
+            <div class="barra1"><h2>Tipo de problema</h2></div>
+            <ul class="opciones">
+                <li class="alumbrado" (click)="this.formReporte('Alumbrado')">Alumbrado</li>
+                <hr>
+                <li class="agua" (click)="this.tipoAgua()">Agua</li>
+                <hr>
+                <li class="obstruccion" (click)="this.tipoObstruccion()">Obstrucción de circulación</li>
+                <hr>
+                <li class="incendio" (click)="this.formReporte('Incendio')">Incendio</li>
+                <hr>
+            </ul>
+            <p class="cerrar" (click)="this.toggleTipoProblema = false; this.toggleDesactivarMapa = false">Cerrar</p>
+        </div>
+    
+        <div class="reportar tipoAgua" [ngClass]="{'activeTipoAgua': toggleTipoAgua}">
+            <div class="barra2"><h2>Problema de agua</h2></div>
+            <ul class="opciones">
+                <li class="agua" (click)="this.formReporte('Inundación')">Inundación</li>
+                <hr>
+                <li class="agua" (click)="this.formReporte('Fuga de agua')">Fuga de agua</li>
+                <hr>
+                <li class="agua" (click)="this.formReporte('Falta de alcantarilla')">Falta de alcantarilla</li>
+                <hr>
+                <li class="agua" (click)="this.formReporte('Alcantarilla obstruida')">Alcantarilla obstruida</li>
+                <hr>
+                <p class="cerrar" (click)="this.toggleTipoAgua = false; this.toggleTipoProblema = true">Cerrar</p>
+            </ul>
+        </div>
+    
+        <div class="reportar tipoObstruccion" [ngClass]="{'activeTipoObstruccion': toggleTipoObstruccion}">
+            <div class="barra3"><h2>Problema de obstrucción</h2></div>
+            <ul class="opciones">
+                <li class="obstruccion" (click)="this.formReporte('Escombros tirados')">Escombros tirados</li>
+                <hr>
+                <li class="obstruccion" (click)="this.formReporte('Vehículo abandonado')">Vehículo abandonado</li>
+                <hr>
+                <li class="obstruccion" (click)="this.formReporte('Árbol caído')">Árbol caído</li>
+                <hr>
+                <li class="obstruccion" (click)="this.formReporte('Socavón')">Socavón</li>
+                <hr>
+                <li class="obstruccion" (click)="this.formReporte('Cables caídos')">Cables caídos</li>
+                <hr>
+                <p class="cerrar" (click)="this.toggleTipoObstruccion = false; this.toggleTipoProblema = true">Cerrar</p>
+            </ul>
+        </div>
+    
+        <div class="reportar formReporte" [ngClass]="{'activeFormReporte': toggleFormReporte}">
+            <div class="barra1"><h2>Completa el formulario</h2></div>
+            <form class="formReporteForm" (submit)="reportar()" [formGroup]="registrarForm" >
+                <h3>Agrega un comentario (Opcional)</h3>
+                <textarea name="comentario" placeholder="Comentario del problema" formControlName = "comentario"></textarea>
+                <p *ngIf="comentarioLargo" class="error">Comentario muy largo</p>
+                <h3>Imagen (Opcional)</h3>
+                <div class="container-input">
+                    <input type="file" name="imagen" #file id="file" class="inputfile inputfile-2" (change)="onImageSelected($event)" formControlName = "imagen"/> 
+                    <label for="file">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                    <span class="iborrainputfile" >{{span}}</span>
+                    </label>  
+                </div>
+                <input type="checkbox" class="checkbox" id="cronico" name="cronico" value="cronico" formControlName = "cronico">
+                <label class="checkboxLabel" for="cronico">Ha ocurrido este problema anteriormente</label><br>
+                <input type="checkbox" class="checkbox" id="vidaRiesgo" name="vidaRiesgo" value="vidaRiesgo" formControlName = "vidaRiesgo">
+                <label class="checkboxLabel" for="vidaRiesgo"> Considero que hay vidas en riesgo</label><br>
+                <input type="submit" class="enviar" value="Enviar Reporte">
+            </form>
+            <hr>
+            <p class="cerrar" (click)="cerrarForm()">Cerrar</p>
+        </div>
+    
+    </div>
+    
+    <button id="botonReportar" class="botonReportar" [ngClass]="{'showBotonReportar': toggleShowBotonReportar}">Reportar</button>
+    
+    <button id="botonReplicar" class="botonReportar" [ngClass]="{'showBotonReportar': toggleShowBotonReplicar}">Replicar reporte</button>
+
+</div>

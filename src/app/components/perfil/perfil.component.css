@@ -1,0 +1,234 @@
+h1 {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.cuerpoPerfil {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bloquearScroll {
+	overflow-y: hidden;
+}
+
+.infoPersonal {
+    float: left;
+    margin: 50px 250px;
+}
+.boton-editar {
+    margin-top: 10px;
+    width: 200px;
+    height: 35px;
+    padding: 0%;
+    text-align: center;
+    border: none;
+    background: #3A4049;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 16px;
+}
+    .boton-editar:hover {
+        background: #444a55;
+        color: #FFFFFF;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+    }
+
+.div-tabla .boton-editar {
+    margin-top: 0;
+}
+
+.reputacion {
+    float: right;
+    margin: 50px 250px;
+}
+
+#progressbar {
+    width: 250px;
+    border: 3px solid #3A4049;
+    border-radius: 1rem;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+  }
+  
+    #progressbar .progress {
+        background-color: #04CAB3;
+        /* Adjust with JavaScript */
+        height: 20px;
+        border-radius: 10px;
+    }
+
+    #divPuntosReputacion {
+        text-align: center;
+        width: 100%;
+    }
+
+    .puntosReputacion {
+        font-weight: bolder;
+        font-size: 20px;
+        color: #3A4049;
+    }
+
+.div-tabla {
+    margin: 100px;
+    margin-top: 275px;
+}
+
+.tabla {
+    width: 100%;
+    border: none;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 0 0 1em 0;
+    caption-side: top;
+ }
+
+ .cabecera th {
+    border-bottom: 2px solid #999999;
+ }
+
+ .acciones {
+     text-align: center;
+ }
+
+ th, td {
+    text-align: left;
+    padding: .5em;
+    border-bottom: 1px solid #999999;
+    width: auto;
+ }
+
+.contenido {
+    width: 100%;
+    height: calc(100% - 55px);
+    margin: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.divEditarForm {
+    transition: all .5s;
+    background-color: #FAFAFA;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    height: max-content;
+    width: max-content;
+    border-radius: 1rem;
+    /* margin: 200px; */
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+    z-index: 4;
+}
+    .divEditarForm .barra1 {
+        border-radius: 1rem 1rem 0rem 0rem;
+        color: #FFFFFF;
+        background-color: #3A4049;
+        padding: 10px;
+    }
+
+    .divEditarForm .barra1 h2{
+        margin: 0;
+        padding: 0;
+    }
+    .divEditarForm .barra1 h4{
+        margin: 0;
+        padding: 0;
+    }
+
+    .editarForm {
+        all: unset;
+    }
+        .editarForm h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        .editarForm input {
+            align-self:center;
+            width: 80%;
+            height: 40px;
+            padding: 5px;
+            margin: 0%;
+            border: solid 1px black; 
+        }
+        .editarForm .editar {
+            margin: 20px 10px;
+            width: 35%;
+            height: 40px;
+            padding: 0%;
+            text-align: center;
+            border: none;
+            background: #04CAB3;
+            cursor: pointer;
+            border-radius: .5rem;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .editarForm .editar:hover {
+            background: #00a592;
+            color: #FFFFFF;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+        }
+
+        .editarForm .cancelar {
+            margin: 20px 10px;
+            width: 35%;
+            height: 40px;
+            padding: 0%;
+            text-align: center;
+            border: none;
+            background: #FE2148;
+            cursor: pointer;
+            border-radius: .5rem;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .editarForm .cancelar:hover {
+            background: #CA1F3D;
+            color: #FFFFFF;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+        }
+
+textarea {
+    resize: none;
+    padding: 5px;
+    width: 250px;
+    height: 100px;
+    border-radius: 1rem;
+    resize: none;
+    padding: 10px;
+}
+
+.container-input {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+    .container-input label{
+        align-self: center;
+        padding: 5px;
+        margin: 0;
+    }
+
+.desactivarFondo {
+    backdrop-filter: brightness(0.6);
+    filter: brightness(0.6);
+    pointer-events: none;
+}
+
+.activarForm {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all .5s;
+}

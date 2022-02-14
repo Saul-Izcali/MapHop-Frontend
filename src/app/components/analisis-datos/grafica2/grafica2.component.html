@@ -1,0 +1,18 @@
+
+
+
+    <div class="contenedorGraf2" id="contenedorDescargar">
+        <div id="chart_div" style="width: 800px; height: 500px;"></div>
+        <!-- <div class="div-tabla" *ngIf="!auxiliar.length">
+            <h1>No hay reportes en la opcion seleccionada</h1>
+        </div> -->
+
+        <div id="conclusion" class="col-md-11">
+            <!-- las conclusiones las deberia hacer en el ts y aqui recorrerlas mediante un for -->
+            <br><h2>Conclusiones</h2>
+            <h5 *ngFor="let c of conclusiones">
+                {{c}}
+            </h5>
+
+        </div>
+    </div>

@@ -1,0 +1,203 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color: #FAFAFA;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.content {
+    width: 92%;
+    height: 82%;
+    z-index: 1;
+    position: absolute;
+    margin: 2.5% 0 0 4%;
+    border: none;
+    align-items: center;
+    box-shadow: 1px 1px 8px 2px rgba(0, 0, 0, .30);
+    background-color: #000000;
+}
+
+.mapa {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    border: none;
+    transition: all .5s;
+}
+    .mapa:hover {
+        transition: all .5s;
+        opacity: .25;
+    }
+
+.mensaje {
+    display: block;
+    float: left;
+    width: 70%;
+    z-index: 3;
+    text-align: center;
+    margin: 0;
+    margin-top: 250px;
+    
+}
+    .mensaje h1 {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .mensaje h2 {
+        color: #00a592;
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+.login {
+    z-index: 4;
+    display: block;
+    float: right;
+    position: absolute;
+    right: 0;
+    margin: 4.5% 4.5% 0 4.5%;
+    width: 340px;
+    background-color: #A0A2A1;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, .45);
+}
+    form .barraForm {
+        align-self: stretch;
+        padding: 8% 0% 6% 0%;;
+        width: 100%;
+        background-color: #3A4049;
+        border-radius: 1rem 1rem 0rem 0rem;
+    }
+        .login h2{
+            font-size: 34px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+    .contenedorInputs{
+        padding: 0px 40px 40px 40px;
+    }
+        .login h3{
+            margin: 24px 0px 6px 0px;
+            font-size: 22px;
+            font-weight: lighter;
+        }
+        .login input{
+            width: 100%;
+            height: 35px;
+            border: none;
+            border-radius: .5rem;
+            background-color: #FFFFFF;
+            font-size: 18px;
+            padding-left: 5%;
+        }
+        .login .enviar{
+            height: auto;
+            width: 90%;
+            margin-top: 45px;
+            padding: 5px;
+            background: #04CAB3;
+            cursor: pointer;
+            border-radius: .5rem;
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 20px;
+            transition: all .5s ease;
+        }
+            form .enviar:hover {
+                background: #00a592;
+                color: #FFFFFF;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+            }
+
+
+            /* vista de 700 pixeles o menos */
+@media only screen and (max-width: 700px) {
+
+    .content {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        z-index: 1;
+        position: absolute;
+        border: none;
+        align-items: center;
+        /* display: flex; */
+        /* justify-content: center; */
+    }
+        .mapa {
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+            .mensaje {
+                display: block;
+                width: 0px;
+                height: 0px;
+            }
+                .mensaje h1 {
+                    font-size: 0px;
+                }
+                .mensaje h2 {
+                    font-size: 0px;
+                }
+
+        .login {
+            /* margin: 4% 4% 0 4%; */
+            width: 300px;
+            background-color: #A0A2A1;
+            align-items: center;
+            border-radius: 1rem;
+            float:unset;
+            position:relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, .45);
+        }
+            form .barraForm {
+                padding: 5% 0% 5% 0%;;
+                width: 100%;
+            }
+                .login h2{
+                    font-size: 28px;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+
+            .contenedorInputs{
+                padding: 0px 22px 20px 22px;
+            }
+                .login h3{
+                    margin: 10px 0px 10px 0px;
+                    font-size: 20px;
+                }
+                .login input{
+                    width: 100%;
+                    height: 30px;
+                    font-size: 18px;
+                }
+                .login .enviar{
+                    background: #04CAB3;
+                    height: auto;
+                    width: 90%;
+                    margin-top: 35px;
+                    /* margin-left: 20px; */
+                    padding: 5px;
+                    cursor: pointer;
+                    border-radius: .5rem;
+                    font-weight: bold;
+                    font-size: 18px;
+                    transition: all .5s ease;
+                }
+
+}

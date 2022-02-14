@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrarse</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <app-barra-navegacion></app-barra-navegacion>
+
+        <form class="form" (submit)="CreateUsuario()" [formGroup]="registrarForm">
+            <div class="barraForm">
+                <h2>Generar Registro de Usuario Responsable de Mantenimiento</h2>
+            </div>
+                <label id="institucionLabel">Institución</label>
+                <select name="institucion" id="selectInstitucion" name="institucion" formControlName = "institucion">
+                    <option value="Ninguna" selected="true" disabled="disabled">Selecciona una institución</option>
+                    <option value="SIAPA">SIAPA</option>
+                    <option value="Infrectructura">Infrectructura de Obras Públicas</option>
+                    <option value="Bomberos">Bomberos</option>
+                    <option value="CFE">CFE</option>
+                    <option value="Proteccion">Protección Civil</option>
+                    <option value="Movilidad">Secretaria de Movilidad</option>
+                </select>                
+
+                <input type="submit" name="registrarte" value="Generar registro" id="enviarInstitucion" class="registrate">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<div class="icono-menu" id="icono" (click)="this.toggleMenu = !this.toggleMenu; this.btnAbrirNotificaciones = !this.btnAbrirNotificaciones; this.btnCerrarNotificaciones = !this.btnCerrarNotificaciones">
+    <img *ngIf="this.btnAbrirNotificaciones && (!this.notificaciones || !this.hayNotificaciones)" src="https://cdn-icons-png.flaticon.com/512/60/60753.png" alt="Notificaciones">
+    <img *ngIf="this.btnAbrirNotificaciones && (this.notificaciones && this.hayNotificaciones)" src="https://cdn.pixabay.com/photo/2020/03/12/11/43/bell-4924849_960_720.png" alt="Notificaciones">
+
+    <img *ngIf="this.btnCerrarNotificaciones" src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="Notificaciones">
+</div>
+
+<div class="cont-menu active" id="menu" [ngClass]="{'active': !toggleMenu, 'opacity': !toggleMenu}">
+    <h3>Notificaciones</h3>
+    <hr>
+    
+    <div *ngIf="!this.notificaciones || !this.hayNotificaciones" class="noHayNotificaciones">
+        <h4>No hay notificaciones</h4>
+    </div>
+
+    <ul *ngIf="this.notificaciones && this.hayNotificaciones">
+        <div *ngFor="let notificacion of notificaciones">
+            <div *ngIf="notificacion.tipoNotificacion == 'nuevoUrgente'">
+                <li class="reporteRojo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="tipoProblema">{{ notificacion.tipoProblema }}</p>
+                    <p class="folioReporte">{{ notificacion.folioReporte }}</p>
+                    <p class="mensaje">Hay un nuevo problema urgente.</p>
+                </li>
+            </div>
+            <div *ngIf="notificacion.tipoNotificacion == 'nuevoProblema'">
+                <li class="reporteVerde">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="tipoProblema">{{ notificacion.tipoProblema }}</p>
+                    <p class="folioReporte">{{ notificacion.folioReporte }}</p>
+                    <p class="mensaje">Se ha reportado un nuevo problema.</p>
+                </li>
+            </div>
+            <div *ngIf="notificacion.tipoNotificacion == 'desatendido'">
+                <li class="reporteAmarillo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="tipoProblema">{{ notificacion.tipoProblema }}</p>
+                    <p class="folioReporte">{{ notificacion.folioReporte }}</p>
+                    <p class="mensaje">Reporte desatendido desde: {{ notificacion.fechaReporte | date:'dd-MM-yyyy' }}.</p>
+                </li>
+            </div>
+
+
+            <div *ngIf="notificacion.tipoNotificacion == 'strike1'">
+                <li class="reporteRojo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="strike">Primer Strike</p>
+                    <p class="mensaje">Tu reputación ha bajado a 1 punto, ten cuidado en tus próximos reportes para evitar perder la cuenta.</p>
+                </li>
+            </div>
+            <div *ngIf="notificacion.tipoNotificacion == 'strike2'">
+                <li class="reporteRojo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="strike">Segundo Strike</p>
+                    <p class="mensaje">Tu reputación ha bajado a 0 puntos, un reporte denegado más y se eliminará tu cuenta permanentemente.</p>
+                </li>
+            </div>
+
+            <div *ngIf="notificacion.tipoNotificacion == 'estadoSolucionado'">
+                <li class="reporteVerde">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="tipoProblema">{{ notificacion.tipoProblema }}</p>
+                    <p class="folioReporte">{{ notificacion.folioReporte }}</p>
+                    <p class="mensaje">El problema ha sido solucionado.</p>
+                </li>
+            </div>
+            <div *ngIf="notificacion.tipoNotificacion == 'estadoDenegado'">
+                <li class="reporteRojo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="tipoProblema">{{ notificacion.tipoProblema }}</p>
+                    <p class="folioReporte">{{ notificacion.folioReporte }}</p>
+                    <p class="mensaje">El reporte ha sido denegado.</p>
+                </li>
+            </div>
+            <div *ngIf="notificacion.tipoNotificacion == 'estadoEnProceso'">
+                <li class="reporteAmarillo">
+                    <img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt="X" (click)="borrarNotificacion(notificacion._id);">
+                    <p class="fechaNotificacion">{{ notificacion.createdAt | date:'dd-MM-yyyy' }}</p>
+                    <p class="tipoProblema">{{ notificacion.tipoProblema }}</p>
+                    <p class="folioReporte">{{ notificacion.folioReporte }}</p>
+                    <p class="mensaje">El problema está en proceso de solución.</p>
+                </li>
+            </div>
+        </div>
+    </ul>
+
+    <div class="eliminarTodas">
+        <button *ngIf="this.notificaciones && this.hayNotificaciones" (click)="borrarTodas();">Eliminar notificaciones</button>
+    </div>
+</div>
+
+<!-- <button style="margin-left: 300px;" (click)="menu(toggleMenu)">Cerrar</button> -->

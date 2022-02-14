@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrarte</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <app-barra-navegacion></app-barra-navegacion>
+        
+
+        <div id="divSelects" class="container">
+            <div class="row">
+
+                <select name="" id="selectGraficas" class="select-css col-md-2"  aria-label="Default select example" (change)="tipoGraficas($any($event.target).value )">
+                    <option *ngFor="let g of graficas" value="{{g}}" >
+                        <span>{{g}}</span>
+                    </option>
+                </select>
+    
+
+                <select name="" id="selectMes" class="select-css col-md-2"  aria-label="Default select example"  (change)="mesSeleccionado($any($event.target).value )">
+                    <option *ngFor="let m of meses" value="{{m}}" id="{{m}}">
+                        {{m}}
+                        <!-- [(ngModel)]="mes" -->
+                    </option>
+                </select>
+                
+                
+                <select name="" id="selectAno" class="select-css col-md-2"  aria-label="Default select example" (change)="anoSeleccionado($any($event.target).value )">
+                    <option *ngFor="let a of anos" value="{{a}}" >
+                        {{a}}
+                    </option>
+                </select>
+                
+                <select *ngIf="admin" name="" id="selectAno" class="select-css col-md-2"  aria-label="Default select example" (change)="institucionSeleccionada($any($event.target).value )">
+                    <option *ngFor="let i of instituciones" value="{{i}}" >
+                        {{i}}
+                    </option>
+                </select>
+                
+                <button class="btnDescargar" (click)="Descargar()"><i class="fas fa-file-download" ></i></button>
+                <!--
+                <select name="" id="" class="select-css col-md-2"  aria-label="Default select example" [(ngModel)]="ano" (change)="anoSeleccionado($any($event.target).value )">
+                    <span  *ngFor="let a of anos" >
+                        <span  *ngIf="a != anoBase">
+                            <option  value="{{a}}">
+                                {{a}}
+                            </option>
+                        </span>
+                    </span>
+                    <option value="{{anoBase}}"  selected>2022</option>
+                </select> -->
+                <!-- crear una variable de mes y otra de año en el component
+                poner dentro del spam un if, si el valor que esta iterando el for es igual a la variable entonces no mostrar
+                y mostrar un span con la variable y el atributo select
+                aunque mas bien eso va a ser un option -->
+    
+                <!-- <button class="col-md-8 ">btn descargar</button> -->
+
+            </div>
+
+        </div>
+
+
+        <div id="divGraficas" class="">
+            <div class="">
+            <!-- <div class="row"> -->
+                <div id="graficas">
+                <!-- <div id="graficas" class="col-md-16 div-appGrafica" > -->
+                    <div class="div-tabla" *ngIf="graficaSeleccionada == 'Grafica 1'">
+                        <app-grafica1></app-grafica1>
+                    </div>
+                    <div class="div-tabla" *ngIf="graficaSeleccionada == 'Grafica 2'">
+                        <app-grafica2></app-grafica2>
+                    </div>
+                    <div class="div-tabla" *ngIf="graficaSeleccionada == 'Grafica 3'">
+                        <app-grafica5></app-grafica5>
+                        <!-- <app-grafica3></app-grafica3> -->
+                    </div>
+                    <!-- <div class="div-tabla" *ngIf="graficaSeleccionada == 'Grafica 4'">
+                        <app-grafica4></app-grafica4>
+                    </div>
+                    <div class="div-tabla" *ngIf="graficaSeleccionada == 'Grafica 5'">
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+
+
+     </body>
+ </html>
+
+

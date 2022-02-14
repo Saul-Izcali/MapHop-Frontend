@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrarte</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <app-barra-navegacion></app-barra-navegacion>
+        
+        <form class="form" (submit)="CreateUsuario()" [formGroup]="registrarForm" >
+            <div class="barraForm">
+                 <h2>Registrarte</h2>
+             </div>
+             <input type="text" name="nombre" id="nombre" placeholder="Nombre" formControlName = "nombre" (change)="ValidarCampo('nombre')"
+                [ngClass]="{'noValido': !nombreValido}">
+             <p class="noValidoMensaje" [ngClass]="{'activar': !nombreValido}">{{ nombreMensaje }}</p>
+             <input type="text" name="apellidoPaterno" id="apellidoPaterno" placeholder="Apellido Paterno" formControlName = "apellidoPaterno" (change)="ValidarCampo('apaterno')"
+                [ngClass]="{'noValido': !apaternoValido}">
+             <p class="noValidoMensaje" [ngClass]="{'activar': !apaternoValido}">{{ apaternoMensaje }}</p>
+             <input type="text" name="apellidoMaterno" id="apellidoMaterno" placeholder="Apellido Materno" formControlName = "apellidoMaterno" (change)="ValidarCampo('amaterno')"
+                [ngClass]="{'noValido': !amaternoValido}">
+             <p class="noValidoMensaje" [ngClass]="{'activar': !amaternoValido}">{{ amaternoMensaje }}</p>
+             <input type="email" name="correoElectronico" id="correoElectronico" placeholder="Correo electrónico" formControlName = "correoElectronico" (change)="ValidarCampo('correo')"
+                [ngClass]="{'noValido': !correoValido}">
+             <p class="noValidoMensaje" [ngClass]="{'activar': !correoValido}">{{ correoMensaje }}</p>
+             <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" formControlName = "nombreUsuario" (change)="ValidarCampo('nombreUsuario')"
+                [ngClass]="{'noValido': !nombreUsuarioValido}">
+             <p class="noValidoMensaje" [ngClass]="{'activar': !nombreUsuarioValido}">{{ nombreUsuarioMensaje }}</p>
+             <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" formControlName = "contrasena" (change)="ValidarCampo('contrasena')"
+                [ngClass]="{'noValido': !contrasenaValido}">
+             <p class="noValidoMensaje" [ngClass]="{'activar': !contrasenaValido}">{{ contrasenaMensaje }}</p>
+             <input type="password" name="confirmarContrasena" id="confirmarContrasena" placeholder="Confirmar Contraseña" formControlName = "confirmarContrasena" (change)="ValidarCampo('confContrasena')"
+                [ngClass]="{'noValido': !confContrasenaValido}">
+             <p class="noValidoMensaje" [ngClass]="{'activar': !confContrasenaValido}">{{ confContrasenaMensaje }}</p>
+             
+             <button class="registrate">Registrarte</button>
+         </form>
+
+     </body>
+ </html>

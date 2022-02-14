@@ -1,0 +1,39 @@
+.div-botones {
+    float: left;
+    text-align: center;
+    margin: 50px 100px;
+}
+
+.grupo-botones {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 0;
+    background: #6b7383;
+}
+    .grupo-botones:hover {
+        background: #3A4049;
+    }
+
+    .izquierda {
+        border-right: 1px solid #000000;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+    
+    .derecha {
+        border-left: 1px solid #000000;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+    
+.seleccionado {
+    background: #3A4049;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ruta Automática</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <app-barra-navegacion></app-barra-navegacion>
+
+        <div class="contenido">
+            <div class="mapa" id="mapa" [ngClass]="{'desactivarMapa': toggleDesactivarMapa}"></div>
+
+            <div class="crearRuta" [ngClass]="{'activeForm': toggleCrearRuta}">
+                <button (click)="this.formRuta()">Crear Ruta</button>
+            </div>
+
+            <div class="formRuta" [ngClass]="{'activeForm': toggleFormRuta}">
+                <div class="barra"><h2>Hora de término de la jornada</h2></div>
+                <input type="time" [formControl]="finJornada">
+                <button (click)="this.crearRuta()">Crear Ruta</button>
+            </div>
+
+            <div class="opcionesRuta">
+                <div class="opcionesRutaInterno" [ngClass]="{'activeForm': toggleOpcionesRuta}">
+                    <div class="detallesRuta">
+                        <img src="https://cdn-icons-png.flaticon.com/512/106/106869.png" class="botonDetallesTerminar" (click)="this.formDetallesRuta()">
+                    </div>
+        
+                    <div class="terminarRuta">
+                        <img src="https://cdn-icons-png.flaticon.com/512/458/458594.png" class="botonDetallesTerminar" (click)="terminarRutaModalOpen(terminarRutaModal)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="detallesReporte" [ngClass]="{'activeForm': toggleDetallesRuta}">
+                <div class="contTipo">
+                    <h1 class="tipo">{{ reporte.tipoProblema }}</h1>
+                </div>
+        
+                <div class="contDatos">
+                    <h2>Urgencia: {{ urgenciaReporte }} puntos</h2>
+                    <h2>Fecha de creación:</h2>
+                    <h2>{{ reporte.fechaCreacion | date:'dd-MM-yyyy' }}</h2>
+                    <h2>Ubicación</h2>
+                </div>
+        
+                <h2 class="cambiar">Cambiar de estado</h2>
+        
+                <div class="cambiarEstado">
+                    <input class="solucionado" type="button" value="Solucionado" (click)="this.cambioSolucionado()">
+                    <input class="denegado" type="button" value="Denegado" (click)="this.cambioDenegado()">
+                </div>
+                
+                <div class="columnaBtnOpciones">         
+                    <input type="button" value="Saltar reporte" (click)="this.toggleSaltarReporte = true; this.toggleDesactivarMapa = true; this.toggleDetallesRuta = false">
+                    <input type="button" value="Solicitar refuerzos" (click)="this.refuerzos()">
+                    <input type="button" value="Incumbe otra institucion" (click)="this.toggleOtraInstitucion = true; this.toggleDesactivarMapa = true; this.toggleDetallesRuta = false">
+                </div>
+        
+                <div class="btnOcultar">
+                    <input type="button" value="Ocultar" (click)="this.toggleDetallesRuta = false; this.toggleOpcionesRuta = true">
+                </div>
+            </div>
+
+            <ng-template #terminarRutaModal let-modal>
+                <div class="modal-header">
+                    <p class="modal-title">Justifica el motivo para terminar la ruta actual</p>
+                    <button class="" aria-label="close" type="button" (click)="modal.dismiss()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> 
+                <div class="modal-body"> 
+                    <textarea name="motivo" id="comentarioM" rows="5" cols="30" class="texto" placeholder="Motivo"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="this.terminarRuta()"> Filtrar </button>
+                </div>
+              </ng-template>
+
+            <!-- <div class="saltarTerminar" [ngClass]="{'activeForm': toggleTerminarRuta}">
+                <img src="https://img.icons8.com/windows/32/000000/xbox-x.png" class="iconoCerrar" (click)="this.toggleTerminarRuta = false; this.toggleOpcionesRuta = true; this.toggleDesactivarMapa = false"/>
+                <h2>Justifica el motivo para terminar la ruta actual</h2>
+                <textarea name="motivo" rows="5" cols="30" class="texto" placeholder="Motivo"></textarea>
+                <input type="button" value="Confirmar" class="boton" (click)="this.terminarRuta()">
+            </div> -->
+
+            <!-- <ng-template #saltarRutaModal let-modal>
+                <div class="modal-header">
+                    <p class="modal-title">Justifica el motivo para saltar el reporte actual</p>
+                    <button class="" aria-label="close" type="button" (click)="modal.dismiss()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> 
+                <div class="modal-body"> 
+                    <textarea name="motivo" rows="5" cols="30" class="texto" placeholder="Motivo"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="this.saltarReporte()"> Filtrar </button>
+                </div>
+              </ng-template> -->
+
+            <div class="saltarTerminar" [ngClass]="{'activeForm': toggleSaltarReporte}">
+                <img src="https://img.icons8.com/windows/32/000000/xbox-x.png" class="iconoCerrar" (click)="this.toggleSaltarReporte = false; this.toggleDesactivarMapa = false; this.toggleDetallesRuta = true"/>
+                <h2>Justifica el motivo para saltar el reporte actual</h2>
+                <textarea name="motivo" rows="5" cols="30" class="texto" placeholder="Motivo"></textarea>
+                <input type="button" value="Confirmar" class="boton" (click)="this.saltarReporte()">
+            </div>
+
+
+            <div class="otraInstitucion" [ngClass]="{'activeForm': toggleOtraInstitucion}">
+                <div class="barra"><h2>Tipo de problema</h2></div>
+                <ul class="opciones">
+                    <li class="alumbrado" (click)="this.otraInstitucion('Alumbrado')">Alumbrado</li>
+                    <hr>
+                    <li class="agua" (click)="this.otraInstitucion('Inundación')">Inundación</li>
+                    <hr>
+                    <li class="agua" (click)="this.otraInstitucion('Fuga de agua')">Fuga de agua</li>
+                    <hr>
+                    <li class="agua" (click)="this.otraInstitucion('Falta de alcantarilla')">Falta de alcantarilla</li>
+                    <hr>
+                    <li class="agua" (click)="this.otraInstitucion('Alcantarilla obstruida')">Alcantarilla obstruida</li>
+                    <hr>
+                    <li class="obstruccion" (click)="this.otraInstitucion('Escombros tirados')">Escombros tirados</li>
+                    <hr>
+                    <li class="obstruccion" (click)="this.otraInstitucion('Vehículo abandonado')">Vehículo abandonado</li>
+                    <hr>
+                    <li class="obstruccion" (click)="this.otraInstitucion('Árbol caído')">Árbol caído</li>
+                    <hr>
+                    <li class="obstruccion" (click)="this.otraInstitucion('Socavón')">Socavón</li>
+                    <hr>
+                    <li class="obstruccion" (click)="this.otraInstitucion('Cables caídos')">Cables caídos</li>
+                    <hr>
+                    <li class="incendio" (click)="this.otraInstitucion('Incendio')">Incendio</li>
+                    <hr>
+                </ul>
+                <p class="cerrar" (click)="this.toggleOtraInstitucion = false; this.toggleDesactivarMapa = false; this.toggleDetallesRuta = true">Cerrar</p>
+            </div>
+
+        </div>
+
+     </body>
+ 
+ </html>

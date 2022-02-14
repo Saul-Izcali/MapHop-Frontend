@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrarte</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <app-barra-navegacion></app-barra-navegacion>
+        
+        <div class="content">
+            <div class="mapa" id="mapa"></div>
+            <div class="mensaje">
+                <h1>Realizar reporte anónimo</h1>
+                <h2>Haz click!</h2>
+            </div>
+            <form action="post"  class="login" (submit)="login()">
+                <h2 class="h2Login barraForm">Iniciar sesión</h2>
+                <div class="contenedorInputs">
+                    <h3>Usuario</h3>
+                    <input type="text" [(ngModel)]="usuario.nombreUsuario" name="nombreUsuario" placeholder="Nombre de usuario">
+                    <h3>Contraseña</h3>
+                    <input type="password" [(ngModel)]="usuario.contrasena" name="contrasena" placeholder="Contraseña">
+                    <p *ngIf="noCoinciden" class="error" style="margin: 10px 0px -30px 0px;">El usuario y contrasena no coinciden</p>
+                    <p *ngIf="noAceptado" class="error" style="margin: 10px 0px -30px 0px;">El usuario especial aún no ha sido aceptado</p>
+                    <p *ngIf="cuentaBaneada" class="error" style="margin: 10px 0px -30px 0px;">La cuenta ha sido bloqueada por 36 horas</p>
+                    <p *ngIf="noExiste" class="error" style="margin: 10px 0px -30px 0px;">La cuenta ingresada no existe</p>
+                    <p *ngIf="fallaServidor" class="error" style="margin: 10px 0px -30px 0px;">Ha ocurrido un error la conexión con en el servidor</p>
+                    <input type="submit" class="enviar" value="Ingresar">
+                </div>
+            </form>
+        </div>
+
+    </body>
+
+</html>

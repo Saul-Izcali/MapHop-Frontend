@@ -1,0 +1,122 @@
+.icono-menu {
+    margin-left: 30px;
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+
+.cont-menu {
+    width: 300px;
+    min-height: 400px;
+    background: #3A4049;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    transition: all .5s ease;
+    border-bottom-right-radius: .5rem;
+    z-index: 9;
+}
+
+.active {
+    transform: translate(0, -500px);
+    transition: all .5s ease;
+}
+
+.opacity {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.cont-menu hr {
+    margin-top: 55px;
+    width: 90%;
+    margin-left: 5%;
+    border: 1px solid #6b7383;
+
+}
+
+.cont-menu ul {
+    padding: 20px 0 20px 0;
+    list-style: none;
+}
+
+.cont-menu ul li {
+    color: #FFFFFF;
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.cont-menu ul li:hover {
+    background: #6b7383;
+}
+
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+  }
+  .line {
+    fill: none;
+    stroke: #3A4049;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+    transition: all 1s ease;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+    transition: all 1s ease;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+    transition: all 1s ease;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+    transition: all 1s ease;
+    stroke: #ffffff;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+    transition: all 1s ease;
+    stroke: #ffffff;
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+    transition: all 1s ease;
+    stroke: #ffffff;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .cont-menu {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    .cont-menu ul li {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .active {
+      transform: translate(0, -110%);
+      transition: all .5s ease;
+    }
+}

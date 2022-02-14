@@ -1,0 +1,18 @@
+<div class="barNav">
+
+    <div class="float-left">
+        <app-menu-desplegable></app-menu-desplegable>
+
+        <div class="logo-nombre" (click)="inicio()">
+            <!-- "Nombre del sistema" -->
+            <img src="../../../../assets/icono2.png" alt="Map Hop" width="30px" height="30px">
+        </div>
+        <p (click)="inicio()">Map Hop</p>
+    </div>
+
+    <div class="float-right">
+        <button class="boton-registrarte" *ngIf="paginaInicio==true" (click)="registrarte()">Registrarte</button>
+    </div>
+
+    <app-notificaciones *ngIf="paginaInicio==false"></app-notificaciones>
+</div>

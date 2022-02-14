@@ -1,0 +1,22 @@
+<!-- <button>Descargar</button> -->
+
+    <div class="" id="contenedorDescargar">
+        <div id="divPieChart" class="div-grafica"></div>
+        <div class="div-tabla" *ngIf="!auxiliar.length">
+            <!-- <h1>No hay reportes en la opcion seleccionada</h1> -->
+        </div>
+
+        <div id="conclusion" class="col-md-4">
+            <!-- las conclusiones las deberia hacer en el ts y aqui recorrerlas mediante un for -->
+            <h2>Conclusiones</h2>
+            <h5 *ngFor="let c of conclusiones">
+                {{c}}
+            </h5>
+            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio nisi, modi porro sunt ex nam? Libero odit at commodi blanditiis eum inventore labore tenetur facilis ut architecto suscipit, soluta repellat?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et quae deleniti, velit culpa sapiente totam officiis expedita. Nobis, laudantium facere. Nemo excepturi cupiditate praesentium ex distinctio recusandae iure ut quos?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus corrupti quos nam pariatur quam, expedita aliquam nemo, esse corporis veritatis porro architecto quasi quas repellendus aut laboriosam? Expedita, porro dolore.</p> -->
+        </div>
+    </div>
+
+
+

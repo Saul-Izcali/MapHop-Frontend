@@ -1,0 +1,32 @@
+<app-barra-navegacion></app-barra-navegacion>
+
+<div id="divSelects" [ngClass]="{'desactivarMapa': toggleDesactivarSelects}">
+    <div class="row">
+        <select name="" id="selectMes" class="select-css col-md-2"  aria-label="Default select example"  (change)="mesSeleccionado($any($event.target).value)">
+            <option *ngFor="let m of meses" value="{{ m }}">
+                {{ m }}
+            </option>
+        </select>
+        
+        
+        <select name="" id="selectAno" class="select-css col-md-2"  aria-label="Default select example" (change)="anoSeleccionado($any($event.target).value)">
+            <option *ngFor="let a of anos" value="{{ a }}" >
+                {{ a }}
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="contenido">
+    <div class="mapa" id="mapa" [ngClass]="{'desactivarMapa': toggleDesactivarMapa}"></div>
+
+    <div class="infoReporte" [ngClass]="{'activar': toggleInfoReporte}">
+        <div class="barra"><h2>{{ reporteSeleccionado.tipoProblema }}</h2></div>
+        <p class="folio">Folio: {{ reporteSeleccionado._id }}</p>
+        <p>Fecha del primer reporte: {{ reporteSeleccionado.fechaCreacion | date:'dd-MM-yyyy'  }}</p>
+        <p>Fecha de solución: {{ reporteSeleccionado.fechaSolucion | date:'dd-MM-yyyy'  }}</p>
+        <p>Cantidad de veces reportado: {{ vecesReportado }}</p>
+        <hr>
+        <p class="cerrar" (click)="this.toggleInfoReporte = false; this.toggleDesactivarMapa = false; this.toggleDesactivarSelects = false;">Cerrar</p>
+    </div>
+</div>

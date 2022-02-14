@@ -1,0 +1,34 @@
+.container-input {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+    .container-input label {
+        align-self: center;
+        width: 70%;
+        margin: 0;
+        padding: 0;
+    }
+
+input {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.noValido {
+    border: solid 2px rgb(238, 61, 61);
+}
+
+.noValidoMensaje {
+    opacity: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+    padding: 0;
+    color: red;
+}
+
+.activar {
+    opacity: 1;
+}

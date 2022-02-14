@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrarte</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <app-barra-navegacion></app-barra-navegacion>
+
+        <app-btns-tablas-usuarios></app-btns-tablas-usuarios>
+
+        <div class="buscador"  *ngIf="usuarios.length">
+            <input type="text" name="busqueda" placeholder="Buscar" [(ngModel)]="busqueda">
+        </div>
+        
+        <div class="div-tabla">
+            <table class="tabla">
+                <tr class="cabecera">
+                    <th>Id</th>
+                    <th>Nombre de Usuario</th>
+                    <th>Fecha de Registro</th>
+                    <th class="acciones">Imagen</th>
+                    <th class="acciones">Acciones</th>
+                </tr>
+                <tr *ngFor="let usuario of usuarios | busquedaUsuarios: busqueda">
+                    <td>{{ usuario._id }}</td>
+                    <th>{{ usuario.nombreUsuario }}</th>
+                    <td>{{ usuario.createdAt | date:'dd-MM-yyyy' }}</td>
+                    <td class="acciones"><a class="imagen-especial" (click)="imagenEspecial(usuario.usuarioEspecial.imagen)">Ver imagen</a></td>
+                    <td class="acciones">
+                        <button class="boton-aceptar" (click)="aceptarUsuario(usuario)" *ngIf="usuario.usuarioEspecial.validado == false">Aceptar</button>
+                        <button class="boton-eliminar" (click)="deleteUsuario(usuario._id)" *ngIf="usuario.usuarioEspecial.validado == false">Denegar</button>
+                        <button class="boton-eliminar" (click)="deleteUsuario(usuario._id)" *ngIf="usuario.usuarioEspecial.validado == true">Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="div-tabla" *ngIf="!usuarios.length">
+            <h1>No hay usuarios especiales registrados</h1>
+        </div>
+
+     </body>
+ 
+ </html>

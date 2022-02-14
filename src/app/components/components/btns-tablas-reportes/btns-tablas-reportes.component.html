@@ -1,0 +1,9 @@
+<div class="div-botones">
+    <button class="grupo-botones izquierda" (click)="tablaDesatendidos()" [ngClass]="{'seleccionado': !toggleDesatendidos}">Desatendidos</button>
+    <button class="grupo-botones" (click)="tablaEnProceso()" [ngClass]="{'seleccionado': !toggleEnProceso}">En Proceso</button>
+    <button class="grupo-botones derecha" (click)="tablaSolucionados()" [ngClass]="{'seleccionado': !toggleSolucionados}">Solucionados</button>
+    
+    <button class="btnGrafica" (click)="graficas()" [ngClass]="{'seleccionado': !toggleGraficas}">Graficar</button>
+</div>
+    
+    

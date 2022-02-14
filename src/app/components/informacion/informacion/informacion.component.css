@@ -1,0 +1,63 @@
+h1{
+    text-align: center;
+    margin-top: 35px;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+form {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+input {
+    margin: 25px 0px 10px 0px;
+}
+
+form .enviar-comentario {
+    margin: 25px auto 25px auto;
+    width: 60%;
+    height: 40px;
+    padding: 0%;
+    text-align: center;
+    border: none;
+    background: #04CAB3;
+    cursor: pointer;
+    border-radius: .5rem;
+    font-weight: bold;
+    font-size: 16px;
+}
+    form .enviar-comentario:hover {
+        background: #00a592;
+        color: #FFFFFF;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+    }
+
+.texto {
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    border-radius: 1rem;
+    resize: none;
+    padding: 10px;
+    margin: 25px 0px 10px 0px;
+    font-size: 16px;
+}
+
+.final {
+    margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 700px) {
+    p {
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

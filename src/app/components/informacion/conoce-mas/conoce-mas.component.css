@@ -1,0 +1,199 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color: #FAFAFA;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top: 25px;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+table {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 50%;
+}
+
+table td {
+    width: 50%;
+    text-align: center;
+}
+
+table img {
+    background-color: #A0A2A1;
+    border: 3px solid #04CAB3;
+    border-radius: 1rem;
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+table p {
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.barNav {
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #04CAB3;
+}
+
+            /* FORMULARIOS DE REGISTRO DE USUARIOS */
+form {
+    background-color: #A0A2A1;
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, .45);
+}
+    form .barraForm {
+        align-self: stretch;
+        margin: 0% 0% 5% 0%;
+        padding: 4% 0% 4% 0%;;
+        width: 100%;
+        background-color: #3A4049;
+        border-radius: 1rem 1rem 0rem 0rem;
+    }
+        form .barraForm h2 {
+            margin-left: 10%;
+            margin-right: 10%;
+            color: #FFFFFF;
+        }
+
+    form label {
+        margin: 0px 0px 10px 10%;
+        padding: 0px;
+        align-self: stretch;
+        color: #000000;
+    }
+    form input {
+        width: 70%;
+        height: 30px;
+        margin-bottom: 30px;
+        border: none;
+        border-radius: .5rem;
+        background-color: #FFFFFF;
+        font-size: 16px;
+        /* text-align: center; */
+        padding-left: 5%;
+    }
+    form .registrate {
+        margin: 5px auto 30px auto;
+        width: 60%;
+        height: 40px;
+        padding: 0%;
+        text-align: center;
+        border: none;
+        background: #04CAB3;
+        cursor: pointer;
+        border-radius: .5rem;
+        font-weight: bold;
+        font-size: 16px;
+    }
+        form .registrate:hover {
+            background: #00a592;
+            color: #FFFFFF;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+        }
+        
+        
+            /* ADJUNTAR ARCHIVO */
+.container-input{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    width: 82%;
+    margin-bottom: 10px;
+    margin-left: 35px;
+}
+/* quita el input file feo */
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/* estilo del nuevo input file */
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.2rem 1rem;
+}
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+/* "Selecciona archivo" */
+.iborrainputfile { 
+	font-size:16px; 
+	font-weight:normal;
+}
+    .inputfile-2 + label {
+        color: #3A4049;
+        border: 2px solid currentColor;
+    }
+        .inputfile-2:focus + label,
+        .inputfile-2.has-focus + label,
+        .inputfile-2 + label:hover {
+            color: #000000;
+        }
+
+        
+            /* RESPONSABLE */
+#institucionLabel{
+    font-size: 20px;
+    margin-top: 12px;
+}
+#selectInstitucion{
+    font-size: 18px;
+    width: 80%;
+    height: 40px;
+}
+#enviarInstitucion{
+    margin: 40px 0px 30px 0px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 700px) {
+    p {
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

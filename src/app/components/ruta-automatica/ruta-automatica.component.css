@@ -1,0 +1,933 @@
+.contenido {
+    width: 100%;
+    height: calc(100% - 55px);
+    margin: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.mapa {
+    transition: all .5s;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    border: none;
+}
+
+
+
+
+.barra {
+    border-radius: 1rem 1rem 0rem 0rem;
+    color: #FFFFFF;
+    background-color: #3A4049;
+    padding: 10px;
+}
+
+.crearRuta {
+    transition: all .5s;
+    background-color: #3A4049;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    height: max-content;
+    width: max-content;
+    z-index: 3;
+    border-radius: 1rem;
+    margin: 200px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+}
+    .crearRuta button {
+        width: 250px;
+        height: 50px;
+        padding: 0%;
+        text-align: center;
+        border: none;
+        background: #3A4049;
+        color: #FFFFFF;
+        cursor: pointer;
+        border-radius: 1rem;
+        font-weight: bold;
+        font-size: 20px;
+    }
+        .crearRuta button:hover {
+            background: #444a55;
+            color: #FFFFFF;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+        }
+.formRuta {
+    transition: all .5s;
+    background-color: #FAFAFA;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    height: max-content;
+    width: max-content;
+    z-index: 3;
+    border-radius: 1rem;
+    margin: 200px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+}
+    .formRuta input {
+        font-size: 25px;
+        align-self:center;
+        align-content: center;
+        border-radius: .5rem;
+        width: 100;
+        height: 40px;
+        padding: 10px;
+        margin: 20px;
+    }
+    .formRuta button {
+        margin: 10px auto 15px auto;
+        width: 60%;
+        height: 40px;
+        padding: 0%;
+        text-align: center;
+        border: none;
+        background: #04CAB3;
+        cursor: pointer;
+        border-radius: .5rem;
+        font-weight: bold;
+        font-size: 16px;
+    }
+        .formRuta button:hover {
+            background: #00a592;
+            color: #FFFFFF;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+        }
+.opcionesRuta {
+    z-index: 1000;
+    display: block;
+    float: right;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    align-items: center;
+    border-radius: 1rem;
+}
+.opcionesRutaInterno {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 1rem;
+    /* border: 3px solid #3A4049; */
+    backdrop-filter: brightness(.8);
+    -webkit-backdrop-filter: brightness(.8);
+    opacity: 0;
+    pointer-events: none;
+}
+.detallesRuta {
+    margin-bottom: 10px;
+    z-index: 4;
+    transition: all .5s;
+    text-align: center;
+}
+    .detallesRuta button {
+        width: 100%;
+        height: 40px;
+        padding: 5px;
+        text-align: center;
+        border: none;
+        background: #3A4049;
+        cursor: pointer;
+        border-radius: .5rem;
+        font-weight: bold;
+        font-size: 16px;
+        color: #FFFFFF;
+    }
+        .detallesRuta button:hover {
+            background: #444a55;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+        }
+.terminarRuta {
+    z-index: 4;
+    transition: all .5s;
+    text-align: center;
+}
+    .terminarRuta button {
+        width: 100%;
+        height: 40px;
+        padding: 5px;
+        text-align: center;
+        border: none;
+        background: #3A4049;
+        cursor: pointer;
+        border-radius: .5rem;
+        font-weight: bold;
+        font-size: 16px;
+        color: #FFFFFF;
+    }
+        .terminarRuta button:hover {
+            background: #444a55;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+        }
+
+
+
+
+
+
+
+
+.cerrar {
+    margin: 5px;
+    cursor: pointer;
+}
+    .cerrar:hover {
+        font-weight: bold;
+    }
+
+.desactivarMapa {
+    opacity: .5;
+    pointer-events: none;
+    transition: all .5s;
+}
+
+
+#comentarioM{
+    height: 95%;
+    width: 95%;
+    margin: 10px;
+}
+
+
+
+.detallesReporte{
+    transition: all .5s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 4;
+    display: block;
+    float: right;
+    position: absolute;
+    right: 0;
+    margin-right:75px;
+    width: 300px;
+    height: auto;
+    background-color: #FAFAFA;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, .45);
+}
+
+
+.contTipo{
+    background: #3A4049;
+    color: #FAFAFA;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: 5px;
+    padding: 12px 0px;
+}
+    .tipo{
+        text-align: center;
+    }
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+    h2 {
+        padding: 0;
+        margin: 0;
+    }
+
+
+    
+.contDatos{
+    margin-left: 3%;
+    margin-bottom: 10px;
+}
+.contDatos h2{
+    margin-top: 10px;
+    font-weight: lighter;
+}
+
+.cambiar{
+    text-align: center;
+    font-weight: lighter;
+    margin-bottom: 2px;
+}
+    .cambiarEstado{ 
+        align-items: center;
+        text-align: center;
+        font-weight: lighter;
+    }
+        .solucionado{
+            background: #04CAB3;
+            border-radius: .8rem;
+            padding: 8px 16px;
+            margin: 2px;
+            font-size: 18px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .45);
+        }
+            .solucionado:hover{
+                background: #00a592;
+            }
+        .denegado{
+            background: #FE2148;
+            border-radius: .8rem;
+            padding: 8px 16px;
+            margin: 2px;
+            font-size: 18px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .45);
+        }
+            .denegado:hover{
+                background: #CA1F3D;
+            }
+
+
+.columnaBtnOpciones{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;  /* Comportamiento por defecto: nowrap */
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+    margin: 20px 0 30px 0;
+}
+.columnaBtnOpciones input{
+    background: #bbbbbbe8;
+    color: #000;
+    font-size: 18px;
+    border-radius: .8rem;
+    padding: 8px 16px;
+    margin: 3px 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .45);
+} 
+.columnaBtnOpciones input:hover{
+    background: #bbbbbb50;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .55);
+}
+
+
+.btnOcultar{
+    width: 100%;
+    text-align: center;
+}
+.btnOcultar input{
+    width: 100%;
+    /* margin-bottom: 10px; */
+    border-radius: 0 0 1rem 1rem;
+    /* box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, .35); */
+    font-weight:600;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #000;
+    font-size: 18px;
+    background: #fff;
+}
+    .btnOcultar input:hover{
+        background: #fafafaee;
+        font-weight:800;
+    }
+
+
+
+
+
+.saltarTerminar{
+    transition: all .5s;
+    opacity: 0;
+    pointer-events: none;
+    background: rgb(196, 196, 196);
+    height: auto;
+    width: 340px;
+    border-radius: 1rem;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    position: absolute;
+    z-index: 3;
+}
+    .saltarTerminar h2{
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .texto{
+        align-items: center;
+        width: 250px;
+        height: 100px;
+        border-radius: 1rem;
+        margin: 15px;
+        resize: none;
+        padding: 10px;
+    }
+    .boton{
+        margin-top: 20px;
+        width: 100%;
+        height: 30px;
+        border-radius: 0 0 1rem 1rem;
+        font-size: 18px;
+    }
+    .iconoCerrar {
+        display: block;
+        float: right;
+        width: 25px;
+        margin: 5px;
+        right: 0;
+        position: absolute;
+    }
+
+    .otraInstitucion {
+        transition: all .5s;
+        background-color: #FAFAFA;
+        position: absolute;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+        height: max-content;
+        width: max-content;
+        z-index: 3;
+        border-radius: 1rem;
+        margin: 200px;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+        padding: 0;
+        margin: 0;
+    }
+        .otraInstitucion .opciones {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .otraInstitucion u {
+            padding: 0;
+            margin: 0;
+        }
+        .otraInstitucion hr {
+            padding: 0;
+            margin: 0;
+        }
+        .otraInstitucion .opciones li {        
+            padding: 5px 50px;
+            margin: 0;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+
+
+
+    .botonDetallesTerminar {
+        width: 75px;
+        cursor: pointer;
+    }
+        .botonDetallesTerminar:hover {
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.80));
+        }
+    
+
+
+
+
+    .activeForm {
+        opacity: 1;
+        pointer-events: auto;
+        transition: all .5s;
+    }
+
+
+
+
+
+
+.incendio:hover {
+    color: #fd8037;
+}
+.agua:hover {
+    color: #6cb7ce;
+}
+.obstruccion:hover {
+    color: #864109;
+}
+.alumbrado:hover {
+    color: #ccc547;
+}
+
+
+/* .incendio {
+    color: #fd8037;
+}
+.agua {
+    color: #6cb7ce;
+}
+.obstruccion {
+    color: #864109;
+}
+.alumbrado {
+    color: #ccc547;
+}
+.incendio:hover {
+    color: #000;
+}
+.agua:hover {
+    color: #000;
+}
+.obstruccion:hover {
+    color: #000;
+}
+.alumbrado:hover {
+    color: #000;
+} */
+
+
+
+
+@media only screen and (max-width: 700px) {
+    
+    .contenido {
+        width: 100%;
+        height: calc(100% - 55px);
+        margin: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000000;
+    }
+    
+    .mapa {
+        transition: all .5s;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+        border: none;
+    }
+    
+    
+    
+    
+    .barra {
+        border-radius: 1rem 1rem 0rem 0rem;
+        color: #FFFFFF;
+        background-color: #3A4049;
+        padding: 10px;
+    }
+    
+    .crearRuta {
+        transition: all .5s;
+        background-color: #3A4049;
+        position: absolute;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+        height: max-content;
+        width: max-content;
+        z-index: 3;
+        border-radius: 1rem;
+        margin: 200px;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+    }
+        .crearRuta button {
+            width: 250px;
+            height: 50px;
+            padding: 0%;
+            text-align: center;
+            border: none;
+            background: #3A4049;
+            color: #FFFFFF;
+            cursor: pointer;
+            border-radius: 1rem;
+            font-weight: bold;
+            font-size: 20px;
+        }
+            .crearRuta button:hover {
+                background: #444a55;
+                color: #FFFFFF;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+            }
+    .formRuta {
+        transition: all .5s;
+        background-color: #FAFAFA;
+        position: absolute;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+        height: max-content;
+        width: max-content;
+        z-index: 3;
+        border-radius: 1rem;
+        margin: 200px;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+    }
+        .formRuta input {
+            font-size: 25px;
+            align-self:center;
+            align-content: center;
+            border-radius: .5rem;
+            width: 100;
+            height: 40px;
+            padding: 10px;
+            margin: 20px;
+        }
+        .formRuta button {
+            margin: 10px auto 15px auto;
+            width: 60%;
+            height: 40px;
+            padding: 0%;
+            text-align: center;
+            border: none;
+            background: #04CAB3;
+            cursor: pointer;
+            border-radius: .5rem;
+            font-weight: bold;
+            font-size: 16px;
+        }
+            .formRuta button:hover {
+                background: #00a592;
+                color: #FFFFFF;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+            }
+    .opcionesRuta {
+        z-index: 1000;
+        display: block;
+        float: right;
+        position: absolute;
+        height: 100%;
+        right: 0;
+        align-items: center;
+        border-radius: 1rem;
+    }
+    .opcionesRutaInterno {
+        margin: 15px;
+        padding: 10px;
+        border-radius: 1rem;
+        /* border: 3px solid #3A4049; */
+        backdrop-filter: brightness(.8);
+        -webkit-backdrop-filter: brightness(.8);
+        opacity: 0;
+        pointer-events: none;
+    }
+    .detallesRuta {
+        margin-bottom: 10px;
+        z-index: 4;
+        transition: all .5s;
+        text-align: center;
+    }
+        .detallesRuta button {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            text-align: center;
+            border: none;
+            background: #3A4049;
+            cursor: pointer;
+            border-radius: .5rem;
+            font-weight: bold;
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+            .detallesRuta button:hover {
+                background: #444a55;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+            }
+    .terminarRuta {
+        z-index: 4;
+        transition: all .5s;
+        text-align: center;
+    }
+        .terminarRuta button {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            text-align: center;
+            border: none;
+            background: #3A4049;
+            cursor: pointer;
+            border-radius: .5rem;
+            font-weight: bold;
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+            .terminarRuta button:hover {
+                background: #444a55;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+            }
+    
+    
+    
+    
+    
+    
+    
+    
+    .cerrar {
+        margin: 5px;
+        cursor: pointer;
+    }
+        .cerrar:hover {
+            font-weight: bold;
+        }
+    
+    .desactivarMapa {
+        opacity: .5;
+        pointer-events: none;
+        transition: all .5s;
+    }
+    
+    
+    
+    
+    
+    
+    .detallesReporte{
+        transition: all .5s;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 4;
+        display: block;
+        float: right;
+        position: absolute;
+        right: 0;
+        margin-right:20px;
+        width: 300px;
+        height: auto;
+        background-color: #FAFAFA;
+        align-items: center;
+        border-radius: 1rem;
+        box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, .45);
+    }
+    
+    
+    .contTipo{
+        background: #3A4049;
+        color: #FAFAFA;
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem 1rem 0 0;
+        margin-bottom: 5px;
+        padding: 12px 0px;
+    }
+        .tipo{
+            text-align: center;
+        }
+        h1 {
+            padding: 0;
+            margin: 0;
+        }
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+    
+    
+        
+    .contDatos{
+        margin-left: 3%;
+        margin-bottom: 10px;
+    }
+    .contDatos h2{
+        margin-top: 10px;
+        font-weight: lighter;
+    }
+    
+    .cambiar{
+        text-align: center;
+        font-weight: lighter;
+        margin-bottom: 2px;
+    }
+        .cambiarEstado{ 
+            align-items: center;
+            text-align: center;
+            font-weight: lighter;
+        }
+            .solucionado{
+                background: #04CAB3;
+                border-radius: .8rem;
+                padding: 8px 16px;
+                margin: 2px;
+                font-size: 18px;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .45);
+            }
+                .solucionado:hover{
+                    background: #00a592;
+                }
+            .denegado{
+                background: #FE2148;
+                border-radius: .8rem;
+                padding: 8px 16px;
+                margin: 2px;
+                font-size: 18px;
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .45);
+            }
+                .denegado:hover{
+                    background: #CA1F3D;
+                }
+    
+    
+    .columnaBtnOpciones{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;  /* Comportamiento por defecto: nowrap */
+        justify-content: center;
+        /* text-align: center; */
+        align-items: center;
+        margin: 20px 0 30px 0;
+    }
+    .columnaBtnOpciones input{
+        background: #bbbbbbe8;
+        color: #000;
+        font-size: 18px;
+        border-radius: .8rem;
+        padding: 8px 16px;
+        margin: 3px 10px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .45);
+    } 
+    .columnaBtnOpciones input:hover{
+        background: #bbbbbb50;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .55);
+    }
+    
+    
+    .btnOcultar{
+        width: 100%;
+        text-align: center;
+    }
+    .btnOcultar input{
+        width: 100%;
+        /* margin-bottom: 10px; */
+        border-radius: 0 0 1rem 1rem;
+        /* box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, .35); */
+        font-weight:600;
+        font-size: 20px;
+        padding: 5px 10px;
+        color: #000;
+        font-size: 18px;
+        background: #fff;
+    }
+        .btnOcultar input:hover{
+            background: #fafafaee;
+            font-weight:800;
+        }
+    
+    
+    
+    
+    
+    .saltarTerminar{
+        transition: all .5s;
+        opacity: 0;
+        pointer-events: none;
+        background: rgb(196, 196, 196);
+        height: auto;
+        width: 340px;
+        border-radius: 1rem;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+        position: absolute;
+        z-index: 3;
+    }
+        .saltarTerminar h2{
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .texto{
+            align-items: center;
+            width: 250px;
+            height: 100px;
+            border-radius: 1rem;
+            margin: 15px;
+            resize: none;
+            padding: 10px;
+        }
+        .boton{
+            margin-top: 20px;
+            width: 100%;
+            height: 30px;
+            border-radius: 0 0 1rem 1rem;
+            font-size: 18px;
+        }
+        .iconoCerrar {
+            display: block;
+            float: right;
+            width: 25px;
+            margin: 5px;
+            right: 0;
+            position: absolute;
+        }
+    
+        .otraInstitucion {
+            transition: all .5s;
+            background-color: #FAFAFA;
+            position: absolute;
+            align-items: center;
+            text-align: center;
+            justify-self: center;
+            height: max-content;
+            width: max-content;
+            z-index: 3;
+            border-radius: 1rem;
+            margin: 200px;
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+            padding: 0;
+            margin: 0;
+        }
+            .otraInstitucion .opciones {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            .otraInstitucion u {
+                padding: 0;
+                margin: 0;
+            }
+            .otraInstitucion hr {
+                padding: 0;
+                margin: 0;
+            }
+            .otraInstitucion .opciones li {        
+                padding: 5px 50px;
+                margin: 0;
+                font-size: 22px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+    
+    
+    
+    
+    
+        .botonDetallesTerminar {
+            width: 75px;
+            cursor: pointer;
+        }
+            .botonDetallesTerminar:hover {
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.80));
+            }
+        
+    
+    
+    
+    
+        .activeForm {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all .5s;
+        }
+
+
+}

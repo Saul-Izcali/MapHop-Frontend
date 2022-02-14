@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Informacion</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <app-barra-navegacion></app-barra-navegacion>
+        
+        <h1>Usuarios especiales</h1>
+        <p>Los usuarios especiales son creados para los servidores públicos, tales como policías, tránsito, bomberos, etc. Esto para poder contar con una reputación del 100% de forma permanente, haciendo valer más los reportes que estos usuarios realizan. Para registrarse como usuario especial se deben completar los datos personales y enviar una imagen que compruebe que se es un servidor público dentro del siguiente formulario.</p>
+        <p><a href='/registro-especial'>Solicitar registro como Usuario especial</a></p>
+
+        <h1>Comentarios y sugerencias</h1>
+        <form class="form">
+            <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre">
+            <p *ngIf="nombreVacio" class="error" style="margin: 0px 0px 0px 0px;">El nombre está vacío</p>
+            <input type="email" name="correo" placeholder="Correo electrónico" [(ngModel)]="correo">
+            <p *ngIf="correoVacio" class="error" style="margin: 0px 0px 0px 0px;">El correo está vacío</p>
+            <p *ngIf="correoMal" class="error" style="margin: 0px 0px 0px 0px;">El correo es incorrecto</p>
+            <textarea rows="5" cols="30" class="texto" name="comentario" placeholder="Comentario" [(ngModel)]="comentario"></textarea>
+            <p *ngIf="comentarioVacio" class="error" style="margin: 0px 0px 0px 0px;">El comentario está vacío</p>
+            <p *ngIf="comentarioLargo" class="error" style="margin: 0px 0px 0px 0px;">El comentario es muy largo</p>
+            <button class="enviar-comentario" (click)="mandarCorreo();">Enviar comentario</button>
+        </form>
+
+        <h1>Conoce más</h1>
+        <p>¿Te gustaría saber más acerca de Map Hop y quienes somos?</p>
+        <p class="final"><a href='/informacion/conoce-mas'>Entra aquí</a></p>
+
+    </body>
+
+</html>

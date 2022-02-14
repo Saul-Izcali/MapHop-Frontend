@@ -1,0 +1,203 @@
+h3 {
+    margin: 0;
+    margin-left: 50px;
+    float: left;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    width: calc(100% - 50px);
+    height: 55px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.icono-menu {
+    margin-right: 30px;
+    float: right;
+    position: relative;
+    z-index: 10;
+}
+
+.cont-menu {
+    width: 300px;
+    height: 100%;
+    background: #3A4049;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .45);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+    transition: all .5s ease;
+    border-bottom-left-radius: .5rem;
+    border-top-left-radius: .5rem;
+    z-index: 9;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.active {
+    transform: translate(0, -110%);
+    transition: all .5s ease;
+}
+
+.opacity {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.cont-menu hr {
+    margin-bottom: 0px;
+    margin-top: 55px;
+    width: 90%;
+    margin-left: 5%;
+    border: 1px solid #6b7383;
+}
+
+.noHayNotificaciones {
+    margin: 10px 0 10px 0;
+    width: 300px;
+    height: calc(100% - 80px);
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+    .noHayNotificaciones h4 {
+        width: 100%;
+        text-align: center;
+    }
+
+.cont-menu ul { 
+    margin: 10px 0 10px 0;
+    width: 300px;
+    height: calc(100% - 120px);
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-color: #6b7383 #A0A2A1;
+    scrollbar-width: 5px;
+}
+    .cont-menu ul::-webkit-scrollbar {
+        width: 5px;               /* width of the entire scrollbar */
+    }
+    .cont-menu ul::-webkit-scrollbar-track {
+        background: #A0A2A1;        /* color of the tracking area */
+    }
+    .cont-menu ul::-webkit-scrollbar-thumb {
+        background-color: #6b7383;    /* color of the scroll thumb */
+    }
+
+.cont-menu ul li {
+    padding: 5px;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    background: #FAFAFA;
+    margin: 0 5px 5px 5px;
+    border-radius: .5rem;
+}
+
+.cont-menu ul li p{
+    margin: 0;
+    padding: 0;
+}
+
+.cont-menu ul li img {
+    float: right;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-left: 5px;
+    align-items: center;
+    display: flex;
+}
+
+
+.eliminarTodas {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+
+}
+    .eliminarTodas button {
+        border: none;
+        background: #A0A2A1;
+        color: #000;
+        cursor: pointer;
+        border-radius: 1rem;
+        font-weight: bold;
+        font-size: 16px;
+        height: 30px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        align-self: center;
+        text-align: center;
+        width: 70%;
+    }
+        .eliminarTodas button:hover {
+            background: #c2c2c2;
+        }
+
+.fechaNotificacion {
+    float: right;
+    width: auto;
+    height: 15px;
+    align-items: center;
+    display: flex;
+}
+
+.tipoProblema {
+    font-weight: bold;
+}
+
+.folioReporte {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.strike {
+    font-weight: bolder;
+    font-size: 20px;
+    color: #FE2148;
+}
+
+.reporteVerde {
+    border: 2px solid #2ECC71;
+}
+
+.reporteRojo {
+    border: 2px solid #FE2148;
+}
+
+.reporteAmarillo {
+    border: 2px solid #FFF62B;
+}
+
+
+  
+  @media only screen and (max-width: 700px) {
+    .cont-menu {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    .cont-menu ul li {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .active {
+      transform: translate(0, -110%);
+      transition: all .5s ease;
+    }
+}

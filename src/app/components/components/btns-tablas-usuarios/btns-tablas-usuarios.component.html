@@ -1,0 +1,5 @@
+<div class="div-botones">
+    <button class="grupo-botones izquierda" (click)="tablaComunes()" [ngClass]="{'seleccionado': !toggleComun}">Comunes</button>
+    <button class="grupo-botones" (click)="tablaEspeciales()" [ngClass]="{'seleccionado': !toggleEspecial}">Especiales</button>
+    <button class="grupo-botones derecha" (click)="tablaResponsables()" [ngClass]="{'seleccionado': !toggleResponsable}">Responsables</button>
+</div>

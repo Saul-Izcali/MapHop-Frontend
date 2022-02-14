@@ -1,0 +1,47 @@
+
+
+.referencia{
+    display: inline;
+}
+
+/* #conclusion{
+    position: absolute;
+    left: 950px;
+    top: 180px;
+} */
+
+.contenedorGraf2{
+    margin: 30px;
+}
+
+#conclusion{
+    align-items: center;
+    margin: 25px;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .contenedorDescargar{
+        display: inline-block;
+    }
+        .contenedorGraf2 {
+            width: calc(100% - 15px);
+            margin: 0 5px;
+            height: max-content;
+            padding: 0;
+            overflow: hidden;
+            overflow-x: scroll;
+        }
+        #conclusion{
+            position:relative;
+            left: 0;
+            top: 0;
+            width: 92%;
+            height: 92%;
+            margin: 15px;
+        }
+            #conclusion h5{
+                font-size: 16px;
+            }
+}
