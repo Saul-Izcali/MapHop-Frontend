@@ -116,8 +116,8 @@ export class RutaAutomaticaComponent implements OnInit {
     
     // DECLARAR LOADER DEL MAPA CON LA APIKEY
     let loader = new Loader({
-      apiKey: 'AIzaSyAYN-jmRSHPR78rT0l1na0XchXlJT7_sDw'
-      // apiKey: ''
+
+      apiKey: ''
     });
 
     setTimeout(() => {
